@@ -1,0 +1,19 @@
+Write a Prolog program to implement reverse (L, R) where List L is original and List R is reversed
+list.
+Solution
+conc([], L, L).
+conc([X|L1], L2, [X|L3]):-
+ conc(L1, L2, L3).
+reversed([], []).
+reversed([Head|Tail], R):-
+ reversed(Tail, L1),
+ conc(L1, [Head], R).
+
+Output 
+| ?- reversed([4,5,7,5],X).
+X = [5,7,5,4]
+yes
+| ?- reversed([],X).
+X = []
+yes
+| ?-

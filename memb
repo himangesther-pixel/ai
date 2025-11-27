@@ -1,0 +1,13 @@
+Write a Prolog program to implement memb(X, L): to check whether X is a member of L or not
+Solution
+memb(X, [X | Tail]).
+memb(X, [Head | Tail]):-
+ memb(X, Tail).
+
+Output 
+| ?- memb(4,[0,2,5,4]).
+true ? ;
+no
+| ?- memb(4,[0,2,5,7]).
+no
+| ?-

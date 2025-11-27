@@ -1,0 +1,23 @@
+Write a program in PROLOG to implement generate_fib(N,T) where T represents the Nth term of
+the fibonacci series.
+Solution
+fib(1, 0):- !.
+fib(2, 1):- !.
+fib(N, T):-
+ N > 2,
+ N1 is N - 1,
+ N2 is N1 - 1,
+ fib(N1, T1),
+ fib(N2, T2),
+ T is T1 + T2.
+Output 
+| ?- fib(5,X).
+X = 3
+yes
+| ?- fib(1,X).
+X = 0
+yes
+| ?- fib(10,X).
+X = 34
+yes
+| ?-

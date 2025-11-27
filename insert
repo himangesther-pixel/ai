@@ -1,0 +1,17 @@
+Write a prolog program to implement insert_nth (I, N, L, R) that inserts an item I into Nth position
+of list L to generate a list R.
+Solution
+insert_nth(I, 1, L, [I|L]):- !.
+insert_nth(I, N, [H|T], [H|T1]):-
+ N1 is N - 1,
+ insert_nth(I, N1, T, T1).
+
+Output 
+| ?- insert_nth(4,0,[5,7,8,0],X).
+no
+| ?- insert_nth(4,1,[5,7,8,0],X).
+X = [4,5,7,8,0]
+yes
+| ?- insert_nth(4,6,[5,7,8,0],X).
+no
+| ?-

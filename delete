@@ -1,0 +1,15 @@
+Write a Prolog program to implement delete_nth (N, L, R) that removes the element on Nth
+position from a list L to generate a list R.
+Solution 
+delete_nth(1, [H|T], T):- !.
+delete_nth(N, [H|T], [H|T1]):-
+ N1 is N - 1,
+ delete_nth(N1, T, T1).
+
+Output 
+| ?- delete_nth(2,[0,1,2,3,4,5,6],X).
+X = [0,2,3,4,5,6]
+yes
+| ?- delete_nth(10,[0,1,2,3,4,5,6],X).
+no
+| ?-

@@ -1,0 +1,15 @@
+Write a Prolog program to implement sumlist(L, S) so that S is the sum of a given list L.
+Solution 
+sumList([], 0).
+sumList([Head|Tail], S):-
+ sumList(Tail, X),
+ S is Head + X.
+ 
+Output 
+| ?- sumList([4,6,7,8,9],X).
+X = 34
+yes
+| ?- sumList([400,16,07,452,911],X).
+X = 1786
+yes
+| ?

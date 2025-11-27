@@ -1,0 +1,13 @@
+Write a prolog program to calculate the sum of two numbers.
+Solution 
+sum(A, B, C) :-
+ C is A + B.
+
+Output 
+| ?- sum(9,7,Z).
+Z = 16
+yes
+| ?- sum(9,0,F).
+F = 9
+yes
+| ?-

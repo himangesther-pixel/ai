@@ -1,0 +1,18 @@
+Write a Prolog program to implement maxlist(L, M) so that M is the maximum number in the list.
+Solution 
+
+max(X, Y, M):- X > Y, M is X, !.
+max(X, Y, M):- Y >= X, M is Y.
+maxlist([H], H):- !.
+maxlist([H|T], M):-
+ maxlist(T, M1),
+ max(H, M1, M).
+
+Output 
+| ?- maxlist([4,5,7,8,0,1,2],M).
+M = 8
+yes
+| ?- maxlist([2,15,-7,7,-0,1,-2],M).
+M = 15
+yes
+| ?-

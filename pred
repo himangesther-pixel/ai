@@ -1,0 +1,14 @@
+Write a Prolog program to implement two predicates evenlength(List) and oddlength(List) so that
+they are true if their argument is a list of even or odd length respectively.
+Solution 
+evenlength([]):- !.
+evenlength([_|L]):- oddlength(L).
+oddlength([_]):- !.
+oddlength([_|L]):- evenlength(L).
+
+Output 
+| ?- evenlength([7,89,3,2,0]).
+no
+| ?- oddlength([7,89,3,2,0]).
+yes
+| ?-
